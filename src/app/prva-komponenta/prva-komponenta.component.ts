@@ -49,7 +49,7 @@ export class PrvaKomponentaComponent implements OnInit {
     });
     this.message.emit(filtriran);
   }
-  constructor(private SportService:SportService,public authService: AuthService) { }
+  constructor(private SportService:SportService,public authService: AuthService) { console.log('www')}
   ngOnInit(): void {
     this.SportService.get_allSports().subscribe(data=>{
       this.sports2=data.map(e=>{

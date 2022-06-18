@@ -1,0 +1,112 @@
+[
+{
+    "id":"f",
+    "naziv":"Court",
+    "slika":{
+        "src":"../../assets/images/football1.jpg",
+        "alt":"football"
+    },
+    "opis":"Football fields with small and big goals and neatly marked",
+    "velikiOpis":"football fields for big and small football with all the accompanying equipment. It is also possible to meet some big football stars. Occasionally tournaments are organized.",
+
+    "cenaPoSatu":120.90,
+    "cenaSaPopustomZaMladje":99.90,
+    "kategorija":[1,2,3],
+    
+    "fa":"sports_soccer",
+    "datum":"All day",
+    "posicija":800
+},
+{
+    "id":"t",
+    "naziv":"Tennis court",
+    "slika":{
+        "src":"../../assets/images/tennis1.jpg",
+        "alt":"tennis"
+    },
+    "opis":"Tennis courts on all surfaces and with equipment.",
+    "velikiOpis":"Tennis courts on all surfaces: clay, grass, concrete. The courts are equipped with var technology and have places to watch.",
+
+    "cenaPoSatu":150.90,
+    "cenaSaPopustomZaMladje":110.90,
+    "kategorija":[4],
+    
+    "fa":"sports_tennis",
+    "datum":"Mon-Fri",
+    "posicija":1300
+}
+,
+{
+    "id":"h",
+    "naziv":"Sports Hall",
+    "slika":{
+        "src":"../../assets/images/hall1.jpg",
+        "alt":"hall"
+    },
+    "opis":"Large sports hall for all indoor sports.It has the necessary equipment.    ",
+    "velikiOpis":"Large sports hall where it is possible to play all indoor sports as well as in a classic hall with all the accompanying equipment    .",
+
+    "cenaPoSatu":70.90,
+    "cenaSaPopustomZaMladje":50.90,
+    "kategorija":[6,7,8,9],
+    
+    "fa":"sports_volleyball    ",
+    "datum":"All day",
+    "posicija":1850
+},
+{
+    "id":"p",
+    "naziv":"Swimming pools",
+    "slika":{
+        "src":"../../assets/images/pool1.jpg",
+        "alt":"pool"
+    },
+    "opis":"Olympic swimming pools for children and adults.    ",
+    "velikiOpis":"Large sports hall where it is possible to play all indoor sports as well as in a classic hall with all the accompanying equipment    .",
+
+    "cenaPoSatu":50.90,
+    "cenaSaPopustomZaMladje":45.90,
+    "kategorija":[5,12],
+    
+    "fa":"pool",
+    "datum":"Mon-Fri",
+    "posicija":2400
+},
+{
+    "id":"m",
+    "naziv":"Massage",
+    "slika":{
+        "src":"../../assets/images/massage1.jpg",
+        "alt":"massage"
+    },
+    "opis":"Massages for all ages and all types with the best. ",
+    "velikiOpis":" For the best results, you need the best ambassadors for you and your body that will relax you in the best way .",
+
+    "cenaPoSatu":65.90,
+    "cenaSaPopustomZaMladje":35.90,
+    "kategorija":[10,11],
+    
+    "fa":"self_improvement",
+    "datum":"Mon-Fri",
+    "posicija":2900
+}
+,
+{
+    "id":"g",
+    "naziv":"Gym",
+    "slika":{
+        "src":"../../assets/images/gym1.jpg",
+        "alt":"hall"
+    },
+    "opis":"Gym with separate sections for men and women. ",
+    "velikiOpis":" A gym where it is possible to do any exercise on the device because we have over 200 devices for all the muscles in your body that you can do yourself.",
+
+    "cenaPoSatu":15.90,
+    "cenaSaPopustomZaMladje":5.90,
+    "kategorija":[13],
+    
+    "fa":"fitness_center",
+    "datum":"All day",
+    "posicija":3500
+}
+]

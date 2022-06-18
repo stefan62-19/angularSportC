@@ -1,0 +1,43 @@
+/* 
+*{
+  font-family: 'Material Icons', sans-serif;
+}
+
+p{
+  font-family: 'Material Icons', sans-serif!important;
+}
+label{
+  font-family: 'Material Icons', sans-serif!important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Material Icons', sans-serif!important;
+} */
+@font-face {
+  font-family: lato;
+  src: url('../assets/fonts/Oxygen/Oxygen-Bold.ttf') format("opentype");
+}
+body{
+  font-family: lato;
+}
+a{
+  font-family: 'Hahmlet'!important;
+}
+body
+{
+  font-family:'Courier New', Courier, monospace!important;
+
+}
+
+.bg-light{
+    background-color: white!important;
+    --bs-bg-opacity: 0!important;
+}
+.container{
+    max-width: 100%!important;
+}
+  .pp{
+    color: yellowgreen!important;
+  }
+
+ /* @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@200&display=swap')*/
+

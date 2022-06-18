@@ -1,0 +1,147 @@
+<app-prva-komponenta></app-prva-komponenta>
+<section class="ftco-section">
+    <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+    <h2 class="heading-section"id='naslov'>Contact Form</h2>
+    </div>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-md-12">
+    <div class="wrapper">
+    <div class="row mb-5">
+    <div class="col-md-3">
+    <div class="dbox w-100 text-center">
+    <div class="icon d-flex align-items-center justify-content-center">
+    <span class="fa fa-map-marker"></span>
+    </div>
+    <div class="text">
+    <p><span>Address:</span> Zdravka Čečara 16</p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="dbox w-100 text-center">
+    <div class="icon d-flex align-items-center justify-content-center">
+    <span class="fa fa-phone"></span>
+    </div>
+    <div class="text">
+    <p><span>Phone:</span> <a href="tel://069545703">Phone: + 381 69545702</a></p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="dbox w-100 text-center">
+    <div class="icon d-flex align-items-center justify-content-center">
+    <span class="fa fa-paper-plane"></span>
+    </div>
+    <div class="text">
+    <p><span>Email:</span> <a href="mailto:info@site.com">info@site.com</a></p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div class="dbox w-100 text-center">
+    <div class="icon d-flex align-items-center justify-content-center">
+    <span class="fa fa-globe"></span>
+    </div>
+    <div class="text">
+    <p><span>Website</span> <a href="#">site.com</a></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row no-gutters">
+    <div class="col-md-7">
+    <div class="contact-wrap w-100 p-md-5 p-4">
+    <h3 class="mb-4">Contact Us</h3>
+    <div id="form-message-warning" class="mb-4"></div>
+    <form [formGroup]="form" (ngSubmit)="submit()">  
+      <div class="row">
+        <div class="col-md-6">
+          <!--ime-->
+          <label for="firstName">First Name</label> 
+          <input   
+          formControlName="firstName"  
+          id="firstName"   
+          type="text"   
+          class="form-control"> 
+          <div *ngIf="f?.['firstName']?.touched && f?.['firstName']?.invalid" class="alert alert-danger">  
+            <div *ngIf="f?.['firstName']?.errors?.['required']">First Name is required.</div>  
+            <div *ngIf="f?.['firstName']?.errors?.['pattern']">Please, enter at least 3 letters.</div>  
+        </div>  
+        </div>
+        <div class="col-md-6">
+          <!--prezime-->
+          <label for="lastName">Last Name</label> 
+          <input   
+          formControlName="lastName"  
+          id="lastName"   
+          type="text"   
+          class="form-control"> 
+          <div *ngIf="f?.['lastName']?.touched && f?.['lastName']?.invalid" class="alert alert-danger">  
+            <div *ngIf="f?.['lastName']?.errors?.['required']">Last Name is required.</div>  
+            <div *ngIf="f?.['lastName']?.errors?.['pattern']">Please, enter at least 3 letters.</div>  
+        </div> 
+        </div>
+        <div class="col-md-12">
+          <!--email-->
+          <label for="email">Email</label> 
+          <input   
+          formControlName="email"  
+          id="email"   
+          type="text"   
+          class="form-control"> 
+          <div *ngIf="f?.['email']?.touched && f?.['email']?.invalid" class="alert alert-danger">  
+            <div *ngIf="f?.['email']?.errors?.['required']">Email is required.</div>  
+            <div *ngIf="f?.['email']?.errors?.['pattern']">
+              Please, enter the format:
+              example@gmail.com.</div>  
+        </div> 
+        </div>
+        <div class="col-md-12">
+          <!--phone-->
+          <div class="form-group">  
+            <label for="mobileNumber">Mobile Number</label>  
+            <input   
+                formControlName="mobileNumber"  
+                id="mobileNumber"   
+                type="text"   
+                class="form-control">  
+            <div *ngIf="f?.['mobileNumber']?.touched && f?.['mobileNumber']?.invalid" class="alert alert-danger">  
+                <div *ngIf="f?.['mobileNumber']?.errors?.['required']">Mobile Number is required.</div>  
+                <div *ngIf="f?.['mobileNumber']?.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>  
+            </div>  
+        </div>  
+        </div>
+        <div class="col-md-12">
+          <!--textarea-->
+          <label for="textarea">Message</label> 
+          <textarea formControlName="text" id="text" type="text" class="form-control"></textarea>
+
+        </div>
+      </div>
+
+<button class="btn btn-primary" style="margin-top:10px;" type="submit" [disabled]="!form.valid" (click)="sendForm()">Submit</button>  
+</form>  
+    </div>
+    </div>
+    <div class="col-md-5 d-flex align-items-stretch">
+    <div class="info-wrap w-100 p-5 img" >
+
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="350" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=zdravka%20celara%2016&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:450px;width:350px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:450px;width:350px;}</style></div></div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<app-prva-komponenta (message)="receiveMessage($event)"></app-prva-komponenta>
+<div class="container sdl"style="padding: 20px;background-color: #71a7d3!important;padding: 20px auto;" >
+      <div class="kateg stil">
+        <h3>Typs of sports</h3>
+        <select name="kategroije" id="kategorije" (change)="filterSortSport($event)" [(ngModel)]="sportValue">
+            <option value="0">Choose a category</option>
+            <option *ngFor="let cat of sports3" value="{{cat.naziv}}">{{cat.naziv}}</option>
+      </select>
+    </div>
+    
+      <div class="sort stil">
+        <h3>Sort here:</h3>
+          <select name="sortiranje" (change)="filterSortSport($event)" [(ngModel)]="sortValue">
+          <option value="0">Sort</option>
+          <option value="opada">Price: High to Low</option>
+          <option value="raste">Price: Low to High</option>
+          <option value="a_z">Alphabet: A to Z</option>
+          <option value="z_a">Alphabet: Z to A</option>
+      </select>
+    </div>
+      <div class="search stil">
+          <h3>Search</h3>
+          <input [(ngModel)]="searchValue" (keyup)="searchSport()" type="text" name="search" placeholder="Search..." style="height: 43px;" class="pretraga form-control mr-sm-2 ng-untouched ng-pristine ng-valid">
+      </div>
+  </div>
+
+<div class="container con4" >
+     <div class="row"> 
+        
+        
+            <div  class="col-md-12 offset-md-2 bord w3-pale-blue bl"  *ngFor="let sport of sports2" id="{{sport.id}}">
+                <div   class="product-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
+                    <div class="product-image  d-flex align-items-center m-4 xxx"><!--Uklonio iz class overflow-hidden-->
+                        <img src="{{sport.slika.src}}" alt="{{sport.slika.alt}}"   class="">
+                    </div>
+                    <div class="py-4 pr-4 pl-4 pl-lg-0 product-details"style="    margin-left: 30px;">
+                        <h4 class="font-weight-bold d-flex justify-content-between">
+                            <a href="#!" class="text-dark" title="Elegant designed coffee plant for desktop decoration">
+                                {{sport.naziv}}
+                            </a>
+                            <a href="#!" class="ml-2 text-muted"><img src="../../assets/images/sale1.png"style="width:100px;height:90px;"></a>
+                        </h4>
+                            <p class="font-weight-bold">{{ispisKategorije(sport.kategorija)}}</p>
+                        <div class=" align-items-baseline mb-2">
+                            <h2 class="mr-2">Price per hour:{{sport.cenaSaPopustomZaMladje | currency:'EUR':"symbol":'2.2-2':'sr-Latn'}}</h2>
+                            <h5 style="text-decoration: line-through;" class="text-striked text-muted mr-3 font-weight-regular">old price:{{sport.cenaPoSatu| currency:'EUR':"symbol":'2.2-2':'sr-Latn'}}</h5>
+                            <h5 class="text-danger">Save: {{snizenje(sport.cenaPoSatu,sport.cenaSaPopustomZaMladje) | number:'1.1-2'}}%  </h5>
+                            <div id="calendar">
+                                <span class="material-icons">calendar_month</span>
+                                <h6 class="text-striked text-muted d-inline mr-3 font-weight-regular">{{sport.datum}}</h6>
+                            </div>   
+                        </div>
+                        <div class="d-flex align-items-baseline mb-2">
+                            <p>{{sport.velikiOpis}}</p>
+                        </div>
+                        <button class="btn btn-outline-secondary" (click)="changePosition(650)" [routerLink] = "['/contact']" style="float:right;" fragment="naslov">contract</button>
+                    </div>
+                </div>
+            </div>               
+    </div>
+
+

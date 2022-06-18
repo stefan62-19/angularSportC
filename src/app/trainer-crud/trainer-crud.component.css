@@ -1,0 +1,12 @@
+#update
+{
+    display: none;
+
+}
+.center
+{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

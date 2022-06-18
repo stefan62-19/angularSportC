@@ -1,0 +1,45 @@
+<app-prva-komponenta></app-prva-komponenta>
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Sign In</h3>
+        <h5>mail za logovanje <mark style="background-color: yellow!important;">milos@gmail.com</mark></h5>
+        <h5>šifra <mark style="background-color: yellow!important;">milos123</mark> </h5>
+        <h6>Drugi nacin je registracija</h6>
+        <div class="formGroup">
+          <input type="text" class="form-control" placeholder="Username" #userName required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="form-control" placeholder="Password" #userPassword required>
+        </div>
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup">
+          <input type="button" class="btn btn-primary btn-block mb-4" value="Sign in" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+        <!-- Calling GoogleAuth Api from AuthService -->
+        <div class="formGroup">
+          <button type="button" style="background-color:#ffaa5e" class="btn googleBtn " (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Log in with Google
+          </button>
+        </div>
+        <!-- <div class="forgotPassword">
+          <span routerLink="/forgot-password">Forgot Password?</span>
+        </div> -->
+      </div>
+      <div class="formGroup"style="    display: flex;
+      align-items: center;
+      justify-content: center;">
+      <div class="redirectToLogin"style="    display: grid;
+      align-items: center;" >
+        
+        <span style="margin: 0px auto;">Don't have an account?</span>
+        <button class="redirect btn btn-primary btn-block mb-4" routerLink="/register-user"> Register</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  

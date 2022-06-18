@@ -1,0 +1,118 @@
+<app-prva-komponenta></app-prva-komponenta>
+<div class="container"*ngIf="authService.userData as user; else userloggedOut">
+    <div class="row">
+        <div class="row p-2">
+          <div class="col-md-12 p-2 justify-content-center">
+              <h4>All trainers</h4>
+          </div>
+          
+          <div class="col-md-3" *ngFor ="let item of trainers;let i=index" >
+              
+              <div class="card" *ngIf="!item.isedit; else elseBlock" id="{{item.id}}">
+                  <div class="card-body">
+                      <div class="card-title">
+                          Name: {{item.ime}}
+                      </div>
+                      <div class="card-subtitle">
+                          Last Name: {{item.prezime}}
+                      </div>
+                      <div class="card-text">
+                         Sports Id: {{item.idSport}}
+                         
+                      </div>
+                      <div class="card-text">
+                        Id:{{i}}
+                       <!-- {{Id[i]}}--> 
+                        
+                     </div>
+                      <span>
+                          <a  (click)="EditRecord(item) " (mouseenter)="setLocal(i)" style="margin-right: 10px;" class="btn btn-primary btn-xs">Edit</a>
+                          <a (mouseenter)="setLocal(i)"  (click)="DeleteTrainer(i)"  data-id="" class="btn btn-danger btn-xs">Delete</a>
+                      </span>
+                      
+                  </div>
+              </div>
+        
+  
+              <ng-template #elseBlock>
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="card-title">
+                              Edit trainer
+                          </div>
+                          <div class="row">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <input type="text" [(ngModel)]="item.editname" class="form-control">
+                                  </div>
+                                  <div class="col-md-12">
+                                      <input type="text" [(ngModel)]="item.editlastname" class="form-control">
+                                  </div>
+                                  <div class="col-md-12">
+                                      <input type="text" [(ngModel)]="item.editid" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <a  class="btn btn-danger btn-xs" style="margin-right: 10px;" (click)="item.isedit = false">Cancel</a>
+                          <a  class="btn btn-primary btn-xs" (click)="Updatarecord(item,i)">Update </a>
+                     
+                      </div>
+                  </div>
+              </ng-template>
+  
+  
+  
+          </div>
+          <button style="color:red;   margin-top: 20px;" (click)="reloadCurrentPage()">if it doesn't work press this button(refresh page)</button>
+      </div>
+        <form >
+            <span><h2>Insert Trainer</h2></span>
+            <div class="form-group">
+              <label for="exampleInputEmail1">First Name</label>
+              <input name="name" type="text" class="form-control" id="exampleInputName" [(ngModel)]="trainersName" aria-describedby="emailHelp" placeholder="Enter Name">
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name</label>
+              <input name="last" type="text" class="form-control" id="exampleInputLast" [(ngModel)]="trainersLastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Sports select</label>
+                <select
+                multiple class="form-control" id="exampleFormControlSelect2"
+                [(ngModel)]="trainersSport" (change)="onChange($event)"name="sport"
+              >
+                
+                <option *ngFor="let spor of Sports" [ngValue]="spor"  value={{spor}}  #op>
+                  {{ spor }}
+                </option>
+              </select>
+              </div>
+
+            <button type="submit" style="margin-top:10px ;margin-bottom:10px" (click)="insertTrainers()" [disabled]="!trainersName||!trainersLastName" class="btn btn-primary">Add Trainers</button>
+          </form>
+    </div>
+</div>
+<ng-template #userloggedOut>
+    <div class="container"style="height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;">
+        <div class="row">
+            <div class="row p-2">
+              <div class="col-md-12 p-2 justify-content-center">
+                <div class="w3-display-middle center">
+                    <h1 class="w3-jumbo w3-animate-top w3-center"><code>Access Denied</code></h1>
+                    <hr class="w3-border-white w3-animate-left" style="margin:auto;width:50%">
+                    <h2>Try login</h2>
+                    <h3 class="w3-center w3-animate-right">You dont have permission to view this page.</h3>
+                    <h3 class="w3-center w3-animate-zoom">🚫🚫🚫🚫</h3>
+                    <h6 class="w3-center w3-animate-zoom">error code:403 forbidden</h6>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</ng-template> 

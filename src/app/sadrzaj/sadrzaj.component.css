@@ -1,0 +1,129 @@
+.container-3{
+    display: flex;
+    justify-content: space-around;
+}
+.gym
+{
+    
+    background-image: url("../../assets/images/gym1.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.pool
+{
+    background-image: url("../../assets/images/pool1.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.mass
+{
+    background-image: url("../../assets/images/massage1.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.row{
+    width: inherit;
+    /*height: 300px;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+.text-block{
+    width:100%;
+    padding: 60px;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+    word-wrap: break-word;
+}
+
+.football{
+    background-image: url('../../assets/images/football1.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.tennis{
+    background-image: url('../../assets/images/tennis1.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.hall{
+    background-image: url('../../assets/images/hall1.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.col-md-4:hover{
+    transition: transform .4s;
+    transform: scale(1.1);
+}
+.tra{
+    transition: transform .4s;
+}
+.pp{
+    color: yellowgreen!important;
+  }
+  /*xxxxxxxxxxxxxxxxxxxxxxxxxx*/
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 230px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    /* background-color: #bbb; */
+    color: black;
+  }
+  
+  .flip-card-back {
+    /* background-color: #2980b9; */
+    color: white;
+    transform: rotateY(180deg);
+  }

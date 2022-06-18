@@ -1,0 +1,29 @@
+<app-prva-komponenta></app-prva-komponenta>
+<div class="displayTable">
+    <div class="displayTableCell"style="display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;">
+      <div class="authBlock"style="text-align:center;" >
+        <h3>You are now registered.Thank You for Registering </h3>
+        <h3>Go to CRUD </h3>
+        <a href="" routerLink="/trainer-crud"> Crud operation here</a>
+        <div class="formGroup" *ngIf="authService.userData as user">
+          <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+          <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+        
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <div class="formGroup">
+          <button type="button" class="btn btn-primary" (click)="authService.SendVerificationMail()">
+            <i class="fas fa-redo-alt"></i>
+            Resend Verification Email
+          </button>
+        </div>
+      </div>
+      <div class="redirectToLogin" style="display: inline-grid;">
+        <span>Go back to?</span>
+        <button class="redirect btn-primary btn" routerLink="/sign-in"> Sign in</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<app-prva-komponenta (message)="receiveMessage($event)"></app-prva-komponenta>
+<div class="container container1">
+    <div class="row">
+        
+            
+            <p>
+                <img width="40%"   src="../../assets/images/banner2.jpg">
+                The construction of the sports center began in 2010. With the great help of our current partners, the project was completed in record time. The complex was built according to the latest standards and technologies. The sports center was completed in early 2012 and put into operation a month later. To the great joy of all visitors, every first useful person of the month received free appointments and treatments to show how much we care about them.
+                The construction of the sports center began in 2010. With the great help of our current partners, the project was completed in record time. The complex was built according to the latest standards and technologies. The sports center was completed in early 2012 and put into operation a month later. To the great joy of all visitors, every first useful person of the month received free appointments and treatments to show how much we care about them.
+                The construction of the sports center began in 2010. With the great help of our current partners, the project was completed in record time. The complex was built according to the latest standards and technologies. The sports center was completed in early 2012 and put into operation a month later. To the great joy of all visitors, every first useful person of the month received free appointments and treatments to show how much we care about them.
+            </p>
+        
+
+    </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="col-md-1 arr"><img  class="slika1"  (click)="nazad()" src="../../assets/images/arrll.png"></div>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <span (click)="closeImg()" class="close" style="color: white;font-size: 30px;    margin-left: 80%;position: absolute;
+        ">&times;</span>
+                <div class="col-md-1 arr"><img  class="slika1" (click)="napred()" src="../../assets/images/arrr.png"></div>
+
+      </div>
+    <div class="container container2">
+        <div class="row" id="kolona">
+        <div class="col-md-1"><img  class="slika1"  (click)="uNazad()" src="../../assets/images/arrleft.png"></div>
+        <div class="col-md-3"><img (click)="zoomIn(0)" class="slika" id="prva" src="../../assets/images/1.jpg"></div>
+        <div class="col-md-3"><img (click)="zoomIn(1)" class="slika" src="../../assets/images/2.jpg"></div>
+        <div class="col-md-3"><img (click)="zoomIn(2)" class="slika" src="../../assets/images/3.jpg"></div>
+        <div class="col-md-3"><img (click)="zoomIn(3)" class="slika" id="poslednja" src="../../assets/images/4.jpg"></div>
+        <div class="col-md-1"><img  class="slika1" (click)="uNapred()" src="../../assets/images/arrright.png"></div>
+    </div>
+    </div>

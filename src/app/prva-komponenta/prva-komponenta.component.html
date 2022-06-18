@@ -1,0 +1,249 @@
+<div class="container"  >
+<nav class="navbar navbar-expand-lg navbar-light   padd" id="navigacija">
+    <div id="logo"><a class="navbar-brand" href="#"><img class="log" id="logoImg" src="../../assets/images/logo.png"></a></div>
+    <button class="navbar-toggler" type="button" (click)="showBurger()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+    <div class="collapse navbar-collapse spc" id="navbarSupportedContent" *ngIf="authService.userData as user; else userloggedOut" >
+      <ul class="navbar-nav mr-auto" id="ulNav">
+        <li class="nav-item active">
+          <a class="nav-link"  id="Home" (click)="changePosition(0);" href="#" >Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650);" id="Histoy" href=""routerLink="/history">Histoy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650);" id="About Us" routerLink="/about-us" href="">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Contact" href=""routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/author">Author</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/trainer-crud">CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  id="dokumentacija"  href="../../assets/DokumentacijaSc.pdf" >Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"(click)="changePosition(650)" id="User"  href="" routerLink="/dashboard">
+            <i class="fas fa-user"></i>User Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="authService.SignOut()">
+            <i class="fas fa-sign-out-alt"></i>Log out
+          </a>
+        </li>
+        <!--click event je bio umesto mouseenter-->
+        <li class="nav-item" id="dropdownSports"  (mouseenter)="rotate()">
+          <div class="btn-group" (mouseleave)="hideDdl()" id="bnt">
+            <!--click event je bio umesto mouseenter-->
+            <button type="button" id="bt" (mouseenter)="showDdl()" routerLink="/sports" class="btn btnD btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <label id="pt">Sports</label>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right"id="ddlD"  (mouseleave)="hideDdl()">
+              <button class="dropdown-item"  *ngFor="let sport of sports2" type="button" [routerLink] = "['/sports']"  fragment="{{sport.id}}">{{sport.naziv}} </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <div id="srchH">
+        <form class="form-inline my-2 my-lg-0 fleks">
+            <input #search [(ngModel)]="searchValue"  [(ngModel)]="searchText"  name="search"  class="form-control mr-sm-2" (click)="showHide2()" type="text" placeholder="Search" id="search" aria-label="Search">
+            <button #searchB routerLink="/sports" (click)="changePosition2(search.placeholder,search.value) ;search.value='';search.placeholder=''"     class="btn btn-outline-success my-2 my-sm-0 " type="submit" >Search</button>
+          </form>
+        </div>
+        <ul class="list-group list-group-flush" id="hide2">
+          <!-- results of ngFor is passed to appFilter with argument searchText -->
+          <li style="cursor:pointer" class="list-group-item"  *ngFor="let c of characters | appFilter: searchText" #lis value="{{c}}">
+            <p (mouseover)="enterSearch(c)" (click)="hideSearch(c);search.value=c" #p>{{c}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+
+    <ng-template #userloggedOut>
+    <div class="collapse navbar-collapse spc" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto" id="ulNav">
+        <li class="nav-item active">
+          <a class="nav-link"  id="Home" (click)="changePosition(0);" href="#" >Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650);" id="Histoy" href=""routerLink="/history">Histoy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650);" id="About Us" routerLink="/about-us" href="">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Contact" href=""routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/author">Author</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/trainer-crud">CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  id="dokumentacija"  href="../../assets/DokumentacijaSc.pdf" >Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)"   id="sign-in"  href="" routerLink="/sign">Sign In</a>
+        </li>
+        <!--click event je bio umesto mouseenter-->
+        <li class="nav-item" id="dropdownSports"  (mouseenter)="rotate()">
+          <div class="btn-group" (mouseleave)="hideDdl()" id="bnt">
+            <!--click event je bio umesto mouseenter-->
+            <button type="button" id="bt" (mouseenter)="showDdl()" routerLink="/sports" class="btn btnD btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <label id="pt">Sports</label>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right"id="ddlD"  (mouseleave)="hideDdl()">
+              <button class="dropdown-item"  *ngFor="let sport of sports2" type="button" [routerLink] = "['/sports']"  fragment="{{sport.id}}">{{sport.naziv}} </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <div id="srchH">
+        <form class="form-inline my-2 my-lg-0 fleks">
+            <input #search [(ngModel)]="searchValue"  [(ngModel)]="searchText"  name="search"  class="form-control mr-sm-2" (click)="showHide2()" type="text" placeholder="Search" id="search" aria-label="Search">
+            <button #searchB routerLink="/sports" (click)="changePosition2(search.placeholder,search.value) ;search.value='';search.placeholder=''"     class="btn btn-outline-success my-2 my-sm-0 " type="submit" >Search</button>
+          </form>
+        </div>
+        <ul class="list-group list-group-flush" id="hide2">
+          <!-- results of ngFor is passed to appFilter with argument searchText -->
+          <li style="cursor:pointer" class="list-group-item"  *ngFor="let c of characters | appFilter: searchText" #lis value="{{c}}">
+            <p (mouseover)="enterSearch(c)" (click)="hideSearch(c);search.value=c" #p>{{c}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </ng-template>
+    <div class="collapse navbar-collapse spc" *ngIf="authService.userData as user; else userloggedOutBurger" id="navbarSupportedContent2" (mouseleave)="hideBurger()">
+      <ul class="navbar-nav mr-auto" id="ulNav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""routerLink="/history">Histoy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/about-us" href="">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" routerLink="/author">Author</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/trainer-crud">CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  id="dokumentacija"  href="../../assets/DokumentacijaSc.pdf" >Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"(click)="changePosition(650)" id="User"  href="" routerLink="/dashboard">
+            <i class="fas fa-user"></i>User Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="authService.SignOut()">
+            <i class="fas fa-sign-out-alt"></i>Log out
+          </a>
+        </li>
+        <li class="nav-item" id="dropdownSports1">
+          <div class="btn-group" (mouseleave)="hideDdl1()" id=" ">
+            <button type="button" (click)="showDdl1()" routerLink="/sports" class="btn btnD btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sports
+            </button>
+            <div class="dropdown-menu dropdown-menu-right"id="ddlD1"  (mouseleave)="hideDdl1()">
+              <button class="dropdown-item"  *ngFor="let sport of sports2" type="button" [routerLink] = "['/sports']"  fragment="{{sport.id}}">{{sport.naziv}} </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+
+      </div>
+    </div>
+
+
+
+    <ng-template #userloggedOutBurger>
+    <div class="collapse navbar-collapse spc" id="navbarSupportedContent2" (mouseleave)="hideBurger()">
+      <ul class="navbar-nav mr-auto" id="ulNav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""routerLink="/history">Histoy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/about-us" href="">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=""routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" routerLink="/author">Author</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)" id="Author"  href="" routerLink="/trainer-crud">CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  id="dokumentacija"  href="../../assets/DokumentacijaSc.pdf" >Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="changePosition(650)"   id="sign-in"  href="" routerLink="/sign">Sign In</a>
+        </li>
+        <li class="nav-item" id="dropdownSports1">
+          <div class="btn-group" (mouseleave)="hideDdl1()" id=" ">
+            <button type="button" (click)="showDdl1()" routerLink="/sports" class="btn btnD btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sports
+            </button>
+            <div class="dropdown-menu dropdown-menu-right"id="ddlD1"  (mouseleave)="hideDdl1()">
+              <button class="dropdown-item"  *ngFor="let sport of sports2" type="button" [routerLink] = "['/sports']"  fragment="{{sport.id}}">{{sport.naziv}} </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div>
+
+      </div>
+    </div>
+  </ng-template>
+
+
+
+
+  </nav>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active"id="baner">
+        <!--<img class="baner" src="../../assets/images/banner.jpg" alt="Banner">-->
+        <div class="text-block"id='txt' >
+          <h1>Sports Center</h1>
+          <h4>Try it and you'll stay</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="album py-5 bg-light"id="kutija">
+  <div class="container">
+    <div class="row"id="pod">
+          <div class="col-md-8 col-sm-6" id="member">
+              <div class="colorbg-text"><h2>Our facility is spacious, safe, clean, and professionally staffed. We invite you to come take a personal tour. Call us at <a  href="tel:+ 381 69545702">+ 381 69545702</a></h2></div>
+          </div>
+        <div class="col-md-4 col-sm-6"id="dugme">
+            <a  href="" routerLink="/contact" id="member2" class=" btn btn-3 btn-3e location-button pull-right aNo">Become a Member >></a>            </div>
+    </div>
+  </div>
+</div>
+
+</div>

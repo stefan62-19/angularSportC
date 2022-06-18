@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "naziv":"Football"
+    },
+    {
+        "id":2,
+        "naziv":"American Football "
+    },
+    {
+        "id":3,
+        "naziv":"Ragby"
+    },
+    {
+        "id":4,
+        "naziv":"Tennis"
+    },
+    {
+        "id":5,
+        "naziv":"Water polo"
+    },
+    {
+        "id":6,
+        "naziv":"Handball"
+    },
+    {
+        "id":7,
+        "naziv":"Basketball"
+    },
+    {
+        "id":8,
+        "naziv":"Voleyball"
+    }
+    ,
+    {
+        "id":9,
+        "naziv":"Futsal"
+    },
+    {
+        "id":10,
+        "naziv":"Sports Massage"
+    },
+    {
+        "id":11,
+        "naziv":"Relax Massage"
+    }
+    ,
+    {
+        "id":12,
+        "naziv":"Swimming"
+    },
+    {
+        "id":13,
+        "naziv":"Gym"
+    }
+]

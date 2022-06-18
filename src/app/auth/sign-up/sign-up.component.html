@@ -1,0 +1,61 @@
+<app-prva-komponenta></app-prva-komponenta>
+<div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Register</h3>
+        <div class="formGroup">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Email Address"
+            #userEmail
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            #userPwd
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <a href="" routerLink="/trainer-crud">
+          <input
+            type="button"
+            class="btn btn-primary btn-block mb-4"
+            value="Register"
+            (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          />
+        </a>
+        </div>
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+        <!-- Continue with Google -->
+        <div class="formGroup">
+          <button
+            type="button"
+            class="btn googleBtn"
+            style="background-color:#ffaa5e"
+            (click)="authService.GoogleAuth()"
+          >
+            <i class="fab fa-google-plus-g"></i>
+            Continue with Google
+          </button>
+        </div>
+      </div>
+      <div class="redirectToLogin"style="    display: flex;
+      align-items: center;
+      justify-content: center;display: grid;
+      align-items: center;">
+        <span
+          >Already have an account?
+          </span
+        >
+        <button class="redirect btn btn-primary btn-block mb-4" routerLink="/sign">Log In</button>
+      </div>
+    </div>
+  </div>

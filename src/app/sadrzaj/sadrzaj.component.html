@@ -1,0 +1,34 @@
+<app-prva-komponenta (message)="receiveMessage($event)"></app-prva-komponenta>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 " *ngFor="let sport of sports2">
+        <div class="card mb-4 box-shadow ">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="card-img-top" (mouseenter)="scaleImg(sport.slika.src,sport.id)" id="{{sport.id}}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="{{sport.slika.alt}}" style="height: 225px; width: 100%; display: block;" src="{{sport.slika.src}}" data-holder-rendered="true">
+              </div>
+              <div class="flip-card-back">
+                  <img id="flip{{sport.id}}" src="">
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{sport.opis}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button routerLink = "/sports" (click)="changePosition(sport.posicija)" type="button"  (click)="viewUniqSport(sport.id)" id="b{{sport.id}}"class="btn btn-sm btn-outline-secondary">View</button>
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+              </div>
+              <span class="material-icons pp">
+                {{sport.fa}}
+                </span>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

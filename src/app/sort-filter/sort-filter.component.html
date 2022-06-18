@@ -1,0 +1,33 @@
+<div class="container"style="padding: 20px;background-color: beige;padding: 20px auto;">
+    <!-- <h2>Check it out    </h2> -->
+    <div class="btn-group" (mouseleave)="hideBtn()" id="btnOut">
+        <button type="button" (click)="showSort()"  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right"id="ddl">
+          <button class="dropdown-item" type="button">Action</button>
+          <button class="dropdown-item" type="button">Another action</button>
+          <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+      </div>
+      <div class="btn-group" (mouseleave)="hideBtn2()" id="">
+        <button type="button" (click)="showSort2()"  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort
+        </button>
+        <div class="dropdown-menu dropdown-menu-right"id="ddlS">
+          <button class="dropdown-item" (click)="showThis(hl.name)" #hl name="High to Low " type="button">Price: High to Low</button>
+          <button class="dropdown-item" (click)="showThis(lh.name)" #lh name="Low to High " type="button">Price: Low to High</button>
+          <button class="dropdown-item" (click)="showThis(az.name)" #az name="A to Z" type="button">Alphabet: A to Z</button>
+          <button class="dropdown-item" (click)="showThis(za.name)" #za name="Z to A" type="button">Alphabet: Z to A</button>
+        </div>
+      </div>
+      <div class="btn-group" (mouseleave)="hideBtn3()" id="">
+        <button type="button" (click)="showSort3()"  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Date
+        </button>
+        <div class="dropdown-menu dropdown-menu-right"id="ddlDD">
+          <button class="dropdown-item" (click)="showThis(all.name)" #all name="1" type="button">All day</button>
+          <button class="dropdown-item" (click)="showThis(mon.name)" #mon name="2" type="button">Mon-Fri</button>
+        </div>
+      </div>
+  </div>
